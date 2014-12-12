@@ -80,6 +80,7 @@ end
 
 # return the shortest word in an array
 def shortest_word_in_array(array)
+  array.inject { |memo, word| memo.length < word.length ? memo : word }
 end
 
 # return the shortest word in an array
