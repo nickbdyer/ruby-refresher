@@ -131,7 +131,7 @@ end
 # . e.g. the array ['cat', 'dog', 'fish'] becomes
 # ['a', 'c', 'd', 'f', 'g', 'h', 'i', 'o', 's', 't']
 def get_all_letters_in_array_of_words(array)
-  array.map! { |word| word.each_char.to_a }
+  array.map! { |word| word.chars }
   array.flatten.sort
   # array.length.times{ array.shift.each_char { |c| array << c } }
   # array.sort
@@ -154,6 +154,7 @@ end
 # take out all the capital letters from a string
 # so 'Hello JohnDoe' becomes 'ello ohnoe'
 def remove_capital_letters_from_string(string)
+
 end
 
 # round up a float up and convert it to an Integer,
