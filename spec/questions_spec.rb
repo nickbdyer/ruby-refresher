@@ -183,8 +183,8 @@ describe 'the Friday test :)' do
     a = is_a_3_dot_range? 1..20
     b = is_a_3_dot_range? 1...20
 
-    expect(a).to be_false
-    expect(b).to be_true
+    expect(a).to be false
+    expect(b).to be true
   end
 
   it 'square_root_of' do
