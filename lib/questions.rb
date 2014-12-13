@@ -187,12 +187,18 @@ end
 # 'the lion the witch and the wardrobe' becomes
 # 'The Lion the Witch and the Wardrobe'
 def titleize_a_string(string)
+  string = string.split.each do |word| 
+    word.capitalize! unless ["the", "and", "a"].include?(word)
+  end
+  string[0].capitalize!
+  string.join(" ")
 end
 
 # return true if a string contains any special characters
 # where 'special character' means anything apart from the letters
 # a-z (uppercase and lower) or numbers
 def check_a_string_for_special_characters(string)
+
 end
 
 # get the upper limit of a range. e.g. for the range 1..20, you
