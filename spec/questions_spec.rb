@@ -207,8 +207,8 @@ describe 'the Friday test :)' do
     a = is_a_2014_bank_holiday?(Time.new(2014, 8, 25))
     b = is_a_2014_bank_holiday?(Time.new(2014, 8, 26))
 
-    expect(a).to be_true
-    expect(b).to be_false
+    expect(a).to be true
+    expect(b).to be false
   end
 
   it 'your_birthday_is_on_a_friday_in_the_year' do
