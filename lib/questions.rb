@@ -1,3 +1,4 @@
+require 'date'
 # keep only the elements that start with an a
 def select_elements_starting_with_a(array)
   array.select { |elem| elem[0] == 'a' }
@@ -248,6 +249,10 @@ end
 # e.g. january 1st, will next be a friday in 2016
 # return the day as a capitalized string like 'Friday'
 def your_birthday_is_on_a_friday_in_the_year(birthday)
+  until birthday.friday? do 
+    birthday = birthday.to_date.next_year
+  end
+  birthday.year
 end
 
 # in a file, total the number of times words of different lengths
