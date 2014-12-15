@@ -221,10 +221,7 @@ end
 
 # count the number of words in a file
 def word_count_a_file(file_path)
-  f = File.open(file_path, "r")
-  wordcount = 0
-  f.each_line { |line| wordcount += line.split.length }
-  wordcount
+  File.read(file_path).split.length
 end
 
 # --- tougher ones ---
@@ -233,7 +230,8 @@ end
 # called call_method_from_string('foobar')
 # the method foobar should be invoked
 def call_method_from_string(str_method)
-  eval(str_method)
+  send(str_method)
+  "pull request........................................."
 end
 
 # return true if the date is a uk bank holiday for 2014
@@ -261,14 +259,9 @@ end
 # and 1 that is 4 letters long. Return it as a hash in the format
 # word_length => count, e.g. {2 => 1, 3 => 5, 4 => 1}
 def count_words_of_each_length_in_a_file(file_path)
-  word_frequency = {}
-  f = File.open(file_path, "r")
-  f.read.scan(/\w+/).each do |word| 
-    if word_frequency[word.length]
-      word_frequency[word.length] = word_frequency[word.length] += 1
-    else 
-      word_frequency[word.length] = 1
-    end
+  word_frequency = Hash.new(0)
+  File.read(file_path).scan(/\w+/).each do |word| 
+    word_frequency[word.length] += 1
   end
   word_frequency
 end
