@@ -262,7 +262,6 @@ end
 # word_length => count, e.g. {2 => 1, 3 => 5, 4 => 1}
 def count_words_of_each_length_in_a_file(file_path)
   word_frequency = {}
-  words = []
   f = File.open(file_path, "r")
   f.read.scan(/\w+/).each do |word| 
     if word_frequency[word.length]
@@ -274,18 +273,3 @@ def count_words_of_each_length_in_a_file(file_path)
   word_frequency
 end
 
-# implement fizzbuzz without modulo, i.e. the % method
-# go from 1 to 100
-# (there's no RSpec test for this one)
-def fizzbuzz_without_modulo
-  
-end
-
-# print the lyrics of the song 99 bottles of beer on the wall
-# http://www.99-bottles-of-beer.net/lyrics.html
-# make sure you use the singular when you have one bottle of 
-# beer on the wall, and print 'no more bottles of beer on the wall'
-# at the end.
-# (there's no RSpec test for this one)
-def ninety_nine_bottles_of_beer
-end
