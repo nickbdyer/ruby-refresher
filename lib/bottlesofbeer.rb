@@ -6,29 +6,31 @@
 # (there's no RSpec test for this one)
 
 def ninety_nine_bottles_of_beer
-  i = 99
-  while i >= 0
+  99.downto(0).each do |i|
     puts first_phrase(i).capitalize + ", " + bottles(i) + plural(i) + " of beer."
-    i -= 1
-    puts second_line(i) + "."
+    puts second_line(i-1) + "." unless i == 0
   end
+  puts final_line
+end
+
+def final_line
+  "Go to the store and buy some more, 99 bottles of beer on the wall.." 
 end
 
 def first_phrase(number_of_bottles)
-  return bottles(number_of_bottles) + plural(number_of_bottles) + " of beer on the wall" 
+  bottles(number_of_bottles) + plural(number_of_bottles) + " of beer on the wall" 
 end
 
 def second_line(number_of_bottles)
-  return "Go to the store and buy some more, 99 bottles of beer on the wall.." if number_of_bottles == -1
-  return "Take one down and pass it around, " + first_phrase(number_of_bottles) 
+  "Take one down and pass it around, " + first_phrase(number_of_bottles) 
 end
 
 def plural(number)
-  return number == 1 ? "" : "s"
+  number == 1 ? "" : "s"
 end
 
 def bottles(number)
-  return number > 0 ? "#{number} bottle" : "no more bottle"
+  number > 0 ? "#{number} bottle" : "no more bottle"
 end
 
 ninety_nine_bottles_of_beer
