@@ -264,8 +264,7 @@ def count_words_of_each_length_in_a_file(file_path)
   word_frequency = {}
   words = []
   f = File.open(file_path, "r")
-  f.each_line { |line| words <<  line.gsub(/[^a-zA-Z1-9\s]/, "").split }
-  words.flatten.each do |word| 
+  f.read.scan(/\w+/).each do |word| 
     if word_frequency[word.length]
       word_frequency[word.length] = word_frequency[word.length] += 1
     else 
@@ -279,6 +278,7 @@ end
 # go from 1 to 100
 # (there's no RSpec test for this one)
 def fizzbuzz_without_modulo
+  
 end
 
 # print the lyrics of the song 99 bottles of beer on the wall
